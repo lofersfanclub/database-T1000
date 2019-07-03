@@ -56,6 +56,7 @@ snapshot.forEach(function(childSnapshot) {
     var ctaCopy = childSnapshot.val().ctaCopy;
     var priceCopy1 = childSnapshot.val().priceCopy1;
     var price = childSnapshot.val().price;
+    var priceCopy2 = childSnapshot.val().priceCopy2;
     var priceCopy3 = childSnapshot.val().priceCopy3;
     // app4.todos.push({ text: firstName + ": " + email })
 
@@ -66,6 +67,7 @@ snapshot.forEach(function(childSnapshot) {
     app9.tableTodo.push({id: key, name: ctaCopy })
     app9.tableTodo.push({id: key, name: priceCopy1 })
     app9.tableTodo.push({id: key, name: price })
+    app9.tableTodo.push({id: key, name: priceCopy2 })
     app9.tableTodo.push({id: key, name: priceCopy3 })
 
   }
