@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 var storage = firebase.storage();
 
-getData(16, logData);
+getData(17, logData);
 
 function logData(data){
 console.log(data.val().ReportingName);
@@ -45,7 +45,7 @@ var query = firebase.database().ref("/").orderByKey();
 query.once("value")
 .then(function(snapshot) {
 snapshot.forEach(function(childSnapshot) {
-  dataPick-1;
+  dataPick;
   if(dataPick == childSnapshot.key){
     data = childSnapshot
 
