@@ -285,6 +285,44 @@
         </ul>
       </div>
     </div>
+    <div id="app-9">
+    <div id="todo-list-table">
+    <table>
+      <tbody>
+      <tr>
+        <td
+          is="talbe-item"
+          v-for="(todo, index) in todos"
+          v-bind:key="todo.id"
+          v-bind:name="todo.name"
+          v-on:remove="todos.splice(index, 1)"
+          ></td>
+        <td
+          is="talbe-item"
+          v-for="(todo, index) in todos"
+          v-bind:key="todo.id"
+          v-bind:name="todo.name"
+          v-on:remove="todos.splice(index, 1)"
+          ></td>
+        </tr>
+      <tr>
+        <td
+          is="talbe-item"
+          v-for="(todo, index) in todos"
+          v-bind:key="todo.id"
+          v-bind:name="todo.name"
+          ></td>
+        <td
+          is="talbe-item"
+          v-for="(todolo, index) in tableTodo"
+          v-bind:key="tableTodo.id"
+          v-bind:name="tableTodo.thing"
+          ></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
     </main>
   </div>
 </div>
@@ -325,11 +363,44 @@ Vue.component('todo-item', {
   props: ['name']
 })
 
+Vue.component('talbe-item', {
+  template: '\
+    <td>\
+      {{ name }}\
+    </td>\
+    <td>\
+      {{ thing }}\
+    </td>\
+  ',
+  props: ['name']
+})
+
 var app8 = new Vue({
   el: '#todo-list-example',
   data: {
     newTodoText: '',
     todos: [
+    ],
+    nextTodoId: 0
+  },
+  methods: {
+    addNewTodo: function () {
+      this.todos.push({
+        id: this.nextTodoId++,
+        name: this.newTodoText
+      })
+      this.newTodoText = ''
+    }
+  }
+})
+
+var app9 = new Vue({
+  el: '#todo-list-table',
+  data: {
+    newTodoText: '',
+    todos: [
+    ],
+    tableTodo: [
     ],
     nextTodoId: 0
   },

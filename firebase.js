@@ -51,10 +51,13 @@ snapshot.forEach(function(childSnapshot) {
 
     var key = childSnapshot.val().key;
     var email = childSnapshot.val().ReportingName;
+    var copy1 = childSnapshot.val().copy1;
     // app4.todos.push({ text: firstName + ": " + email })
 
     // app7.groceryList.push({id: key, text: firstName + ": " + email })
     app8.todos.push({id: key, name: email })
+    app9.todos.push({id: key, name: email })
+    app9.tableTodo.push({id: key, name: copy1 })
 
   }
 });
